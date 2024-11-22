@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.add-button, .back-button, .delete-button, .submit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.add-button:hover, .back-button:hover, .delete-button:hover, .submit-button:hover {
+    background-color: #45a049;
+}
+
+.delete-button {
+    background-color: #f44336;
+}
+
+.delete-button:hover {
+    background-color: #e53935;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    width: 100%;
+}
