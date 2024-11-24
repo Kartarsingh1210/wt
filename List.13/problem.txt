@@ -1,0 +1,3 @@
+13. Demonstrate jQuery for coping contents from one list control to another list. 
+Also demonstrate how to create new element in HTML page using jQuery.
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Chessboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    header, footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      width: 100%;
+    }
+
+    .chessboard-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 20px 0;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      width: 90vw; /* Makes the board responsive */
+      max-width: 600px; /* Ensures the board doesn't grow too large */
+      aspect-ratio: 1 / 1; /* Maintains the chessboard as a square */
+    }
+
+    td {
+      width: 12.5%; /* Each cell is 1/8 of the table width */
+      height: 12.5%; /* Matches the height for a square cell */
+      text-align: center;
+    }
+
+    .white {
+      background-color: #fff;
+    }
+
+    .black {
+      background-color: #000;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Responsive Chessboard</h1>
+  </header>
+
+  <div class="chessboard-container">
+    <table>
+      <!-- JavaScript will generate the chessboard -->
+    </table>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Chessboard Design. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Function to generate the chessboard
+    const chessboard = document.querySelector("table");
+    for (let i = 0; i < 8; i++) {
+      const row = document.createElement("tr");
+      for (let j = 0; j < 8; j++) {
+        const cell = document.createElement("td");
+        if ((i + j) % 2 === 0) {
+          cell.classList.add("white"); // Even sum of row+column index gets white
+        } else {
+          cell.classList.add("black"); // Odd sum of row+column index gets black
+        }
+        row.appendChild(cell);
+      }
+      chessboard.appendChild(row);
+    }
+  </script>
+</body>
+</html>

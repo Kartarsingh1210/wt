@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        li {
+            padding: 5px;
+            background: #f0f0f0;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h3>Copy List Items</h3>
+    <ul id="list1">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <ul id="list2">
+        <!-- Empty list -->
+    </ul>
+
+    <button id="copyButton">Copy List Items</button>
+
+    <h3>Add a New Element</h3>
+    <button id="addButton">Add New Div</button>
+
+   <div id="newElementsContainer"></div>
+
+    <script>
+        // jQuery code will be written here
+        $(document).ready(function () {
+            // 1. Copy contents from #list1 to #list2
+            $('#copyButton').click(function () {
+                // Empty the target list before copying (optional)
+                $('#list2').empty();
+        
+                // Clone items from #list1 and append them to #list2
+                $('#list1 li').clone().appendTo('#list2');
+            });
+        
+            // 2. Add a new element dynamically
+            $('#addButton').click(function () {
+                // Create a new div element
+                const newDiv = $('<div></div>')
+                    .text('This is a dynamically added DIV!')
+                    .css({
+                        padding: '10px',
+                        margin: '10px 0',
+                        background: '#e0f7fa',
+                        border: '1px solid #00796b',
+                    });
+        
+                // Append it to the container
+                $('#newElementsContainer').append(newDiv);
+            });
+        });
+        
+    </script>
+</body>
+</html>
